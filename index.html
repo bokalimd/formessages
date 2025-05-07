@@ -5,25 +5,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Redirecting...</title>
     <script>
-        function getParameterByName(name) {
-            const urlParams = new URLSearchParams(window.location.search);
-            return urlParams.get(name);
-        }
-
         window.onload = function() {
-            const paramName = "p"; // Change this to your desired parameter name
-            const paramValue = getParameterByName(paramName);
-            if (paramValue) {
-                const newUrl = "http://operationskyvalley.com/" + encodeURIComponent(paramValue);
-				
-                window.location.href = newUrl;
-            } else {
-                document.body.innerHTML = "No valid parameter found.";
-            }
+            const path = window.location.pathname;      // gets the path after domain.com/
+            const query = window.location.search;       // gets the query string like ?id=123
+            const newUrl = "http://operationskyvalley.com" + path + query;
+            window.location.href = newUrl;
         };
     </script>
 </head>
 <body>
-   <!--     <p>If you are not redirected, <a id="redirectLink" href="#">click here</a>.</p> -->
 </body>
 </html>
