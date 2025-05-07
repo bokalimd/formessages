@@ -6,8 +6,9 @@
     <title>Redirecting...</title>
     <script>
         window.onload = function() {
-            const path = window.location.pathname; // gets everything after domain.com/
-            const newUrl = "https://mydomain.com" + path;
+            const path = window.location.pathname;      // gets the path after domain.com/
+            const query = window.location.search;       // gets the query string like ?id=123
+            const newUrl = "http://operationskyvalley.com" + path + query;
             window.location.href = newUrl;
         };
     </script>
